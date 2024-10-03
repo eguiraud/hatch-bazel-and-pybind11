@@ -2,6 +2,7 @@
 
 [![PyPI - Version](https://img.shields.io/pypi/v/hatch-bazel-and-pybind11.svg)](https://pypi.org/project/hatch-bazel-and-pybind11)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/hatch-bazel-and-pybind11.svg)](https://pypi.org/project/hatch-bazel-and-pybind11)
+[![test](https://github.com/eguiraud/hatch-bazel-and-pybind11/actions/workflows/test.yml/badge.svg)](https://github.com/eguiraud/hatch-bazel-and-pybind11/actions/workflows/test.yml)
 
 -----
 
