@@ -13,6 +13,15 @@ This is done very much in the spirit of [Cunningham's Law](https://meta.wikimedi
 
 > the best way to get the right answer on the internet is not to ask a question; it's to post the wrong answer
 
+## Playing with this code
+
+`hatch build` always runs bazel and therefore always refreshes the
+extension module as needed, but `hatch test` or `hatch shell` do not
+know they have to run bazel, so `hatch build && hatch test` or similar
+is the robust way to rebuild the native code as needed, at least for now:
+without an explicit `hatch build`, `hatch test/shell` risk running with
+stale versions of the extension module.
+
 ## Installation
 
 ```console
