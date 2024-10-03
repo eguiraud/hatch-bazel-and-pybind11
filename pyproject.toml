@@ -27,9 +27,9 @@ classifiers = [
 dependencies = []
 
 [project.urls]
-Documentation = "https://github.com/Enrico Guiraud/hatch-bazel-and-pybind11#readme"
-Issues = "https://github.com/Enrico Guiraud/hatch-bazel-and-pybind11/issues"
-Source = "https://github.com/Enrico Guiraud/hatch-bazel-and-pybind11"
+Documentation = "https://github.com/eguiraud/hatch-bazel-and-pybind11#readme"
+Issues = "https://github.com/eguiraud/hatch-bazel-and-pybind11/issues"
+Source = "https://github.com/eguiraud/hatch-bazel-and-pybind11"
 
 [tool.hatch.version]
 path = "src/hatch_bazel_and_pybind11/__about__.py"
