@@ -1,0 +1,56 @@
+[build-system]
+requires = ["hatchling", "hatch-build-scripts"]
+build-backend = "hatchling.build"
+
+[project]
+name = "hatch-bazel-and-pybind11"
+dynamic = ["version"]
+description = 'Testing the integration of hatch, bazel and pybind11'
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+keywords = []
+authors = [
+  { name = "Enrico Guiraud", email = "enrico.guiraud@pm.me" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = []
+
+[project.urls]
+Documentation = "https://github.com/Enrico Guiraud/hatch-bazel-and-pybind11#readme"
+Issues = "https://github.com/Enrico Guiraud/hatch-bazel-and-pybind11/issues"
+Source = "https://github.com/Enrico Guiraud/hatch-bazel-and-pybind11"
+
+[tool.hatch.version]
+path = "src/hatch_bazel_and_pybind11/__about__.py"
+
+# NOTE: I could not think of a way to not produce both pybind_extension.so and
+# pybind/pybind_extension.so
+[[tool.hatch.build.hooks.build-scripts.scripts]]
+work_dir = "src/hatch_bazel_and_pybind11/"
+out_dir = "src/hatch_bazel_and_pybind11/bazel_artifacts/"
+commands = [
+    "bazel build //...",
+    "rm -f pybind_extension.so && cp bazel-bin/pybind_extension.so .",
+]
+artifacts = [
+    "pybind_extension.so",
+]
+
+[tool.hatch.build.targets.wheel]
+artifacts = [
+  "src/hatch_bazel_and_pybind11/pybind_extension.so",
+]
+exclude = [
+  "src/hatch_bazel_and_pybind11/pybind_extension.cc",
+]

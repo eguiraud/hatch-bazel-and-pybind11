@@ -1,0 +1,5 @@
+- [X] package pure python + extension module using hatch + bazel + pybind11
+- [ ] add a system package dependency to the extension module
+- [ ] add pre-install script that errors out if system package (or bazel) not available
+- [ ] check that on ubuntu we can install and run the package correctly
+- [ ] check that on windows and mac we get the expected error message

@@ -1,0 +1,5 @@
+module(name = "pybind-extension", version = "0.1")
+
+bazel_dep(name = "pybind11_bazel", version = "2.11.1")
+python_configure = use_extension("@pybind11_bazel//:python_configure.bzl", "extension")
+use_repo(python_configure, "local_config_python", "pybind11")
