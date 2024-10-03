@@ -4,6 +4,7 @@
 
 from hatch_bazel_and_pybind11 import Foo
 
+
 def test_bazel_hatch_integration():
     f = Foo(x=42)
     assert f.x == 42
