@@ -32,17 +32,3 @@ Source = "https://github.com/eguiraud/hatch-bazel-and-pybind11"
 
 [tool.hatch.version]
 path = "src/hatch_bazel_and_pybind11/__about__.py"
-
-[tool.hatch.build]
-packages = ["src/hatch_bazel_and_pybind11"]
-
-[tool.hatch.build.targets.sdist]
-# FIXME: why does none of this work?
-include = [
-  "hatch_bazel_and_pybind11/**/*.h",
-  "hatch_bazel_and_pybind11/cpp/submodule",
-  "hatch_bazel_and_pybind11/cpp/submodule/submodule.h",
-  "src/hatch_bazel_and_pybind11/cpp/submodule",
-  "src/hatch_bazel_and_pybind11/cpp/submodule",
-  "src/hatch_bazel_and_pybind11/cpp/submodule/submodule.h",
-]
