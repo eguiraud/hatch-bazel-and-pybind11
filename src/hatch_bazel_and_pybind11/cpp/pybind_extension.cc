@@ -1,4 +1,5 @@
 #include <pybind11/pybind11.h>
+#include "submodule/submodule.h"
 
 namespace py = pybind11;
 
@@ -14,4 +15,6 @@ PYBIND11_MODULE(pybind_extension, m) {
   py::class_<Foo>(m, "Foo")
     .def(py::init<int>(), py::arg("x"))
     .def_readwrite("x", &Foo::x);
+
+  m.def("myfunction", &myfunction);
 }

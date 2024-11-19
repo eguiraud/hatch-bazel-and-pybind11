@@ -3,7 +3,7 @@ __pycache__/
 # hatch build output
 dist/
 # bazel compilation directories
-src/hatch_bazel_and_pybind11/bazel-*
+src/hatch_bazel_and_pybind11/cpp/bazel-*
 # build artifacts
-src/hatch_bazel_and_pybind11/bazel_artifacts/
-src/hatch_bazel_and_pybind11/pybind_extension.so
+src/hatch_bazel_and_pybind11/cpp/bazel_artifacts/
+src/hatch_bazel_and_pybind11/cpp/pybind_extension.so

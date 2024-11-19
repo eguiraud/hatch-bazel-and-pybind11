@@ -1,0 +1,5 @@
+cc_library(
+    name = "submodule",
+    hdrs = ["submodule.h"],
+    visibility = ["//:__pkg__"]
+)
