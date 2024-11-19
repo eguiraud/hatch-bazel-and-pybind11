@@ -33,19 +33,6 @@ Source = "https://github.com/eguiraud/hatch-bazel-and-pybind11"
 [tool.hatch.version]
 path = "src/hatch_bazel_and_pybind11/__about__.py"
 
-# NOTE: I could not think of a way to not produce both pybind_extension.so and
-# pybind/pybind_extension.so
-[[tool.hatch.build.hooks.build-scripts.scripts]]
-work_dir = "src/hatch_bazel_and_pybind11/cpp"
-out_dir = "src/hatch_bazel_and_pybind11/cpp/bazel_artifacts/"
-commands = [
-    "bazel build //...",
-    "cp -f bazel-bin/pybind_extension.so .",
-]
-artifacts = [
-    "pybind_extension.so",
-]
-
 [tool.hatch.build]
 packages = ["src/hatch_bazel_and_pybind11"]
 
@@ -58,7 +45,4 @@ include = [
   "src/hatch_bazel_and_pybind11/cpp/submodule",
   "src/hatch_bazel_and_pybind11/cpp/submodule",
   "src/hatch_bazel_and_pybind11/cpp/submodule/submodule.h",
-]
-artifacts = [
-  "src/hatch_bazel_and_pybind11/cpp/pybind_extension.so",
 ]
