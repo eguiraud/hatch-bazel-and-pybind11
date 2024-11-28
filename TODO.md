@@ -1,5 +1,5 @@
 - [X] package pure python + extension module using hatch + bazel + pybind11
 - [X] check that on ubuntu we can install and run the package correctly
-- [ ] add a system package dependency to the extension module
+- [X] add a system package dependency to the extension module
 - [ ] sensible error message if system package dependency (or bazel) not available
 - [ ] check that on windows and mac we get a sensible error message
